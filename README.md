@@ -71,7 +71,7 @@ Each requirement is assigned a point value. A fully complete requirement will ea
 - [ ] __10:__ if a user has liked the album they are viewing, a red border is displayed around the like button
 
 
-
+**Actions I need to take to implement these specs:**
 
 - [x] Schema representation of 'likes'
 - [ ] Database queries to interact with likes
@@ -79,7 +79,7 @@ Each requirement is assigned a point value. A fully complete requirement will ea
   - [x] query to create like
 - [ ] Server side js to actuate db queries
 - [ ] Route for handling like creation
-- [ ] ---> !!!!! Pickup HERE -- In the middle of adding a Like Route (routes/index.js)
+- [ ] ---> !!!!! **Pickup HERE** -- In the middle of adding a Like Route (routes/index.js)
 - [ ] Add fetch call to like creation
 - [ ] user sessions
 - [ ] loggin' in
