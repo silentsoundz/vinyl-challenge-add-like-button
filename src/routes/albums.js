@@ -3,6 +3,7 @@ import express from 'express'
 import {
   getAlbums,
   getAlbumById,
+  addLike,
 } from '../actions'
 
 const router = express.Router()
@@ -18,5 +19,10 @@ router.get('/:albumID', (req, res, next) => {
     .then(album => res.render('albums/album', {album}))
     .catch(next)
 })
+
+router.post('/:albumID', (req, res, next) => {
+  
+})
+
 
 export default router

@@ -1,3 +1,11 @@
+# Volunteers for live coding
+
+Jenn
+Fodé
+Miles
+
+
+
 # Vinyl
 
 A community for record enthusiasts to review their favorite albums.
@@ -52,6 +60,39 @@ You'll be allowed to ask your interviewer clarifying questions and can use the i
 Each requirement is assigned a point value. A fully complete requirement will earn you full points; partially complete requirements get partial points; incomplete requirements get no points. Overall completeness is determined by dividing the total points earned by the total points available. There is a requirement of completion of 80% of the specs to secure a passing result.
 
 ## Specs
+
+## Like Button
+
+
+- [ ] __25:__ user can click a like button on an album, increasing the total displayed without a page refresh
+- [ ] __15:__ number of likes persists between page refreshes and server restarts
+- [ ] __15:__ users are only able to like an album when logged in
+- [ ] __35:__ each album correctly displays the total number of likes from all users, and users can only like an album once
+- [ ] __10:__ if a user has liked the album they are viewing, a red border is displayed around the like button
+
+
+
+
+√ * Schema representation of 'likes'
+* Database queries to interact with likes
+  - query to see if liked
+√  - query to create like
+* Server side js to actuate db queries
+* Route for handling like creation
+* ---> !!!!! Pickup -- In the middle of adding a Like Route (routes/index.js)
+* Add fetch call to like creation
+* user sessions
+* loggin' in
+* Authenticate like routes
+* Add like button to album page
+* css for like button
+* check database to see if user_id is in table for specific album
+*
+
+
+
+
+
 
 ## Sign Up
 
