@@ -61,7 +61,7 @@ Each requirement is assigned a point value. A fully complete requirement will ea
 
 ## Specs
 
-## Like Button
+## Like Button - Example spec (2017-12-20)
 
 
 - [ ] __25:__ user can click a like button on an album, increasing the total displayed without a page refresh
@@ -73,21 +73,21 @@ Each requirement is assigned a point value. A fully complete requirement will ea
 
 
 
-√ * Schema representation of 'likes'
-* Database queries to interact with likes
-  - query to see if liked
-√  - query to create like
-* Server side js to actuate db queries
-* Route for handling like creation
-* ---> !!!!! Pickup -- In the middle of adding a Like Route (routes/index.js)
-* Add fetch call to like creation
-* user sessions
-* loggin' in
-* Authenticate like routes
-* Add like button to album page
-* css for like button
-* check database to see if user_id is in table for specific album
-*
+- [x] Schema representation of 'likes'
+- [ ] Database queries to interact with likes
+  - [ ] query to see if liked
+  - [x] query to create like
+- [ ] Server side js to actuate db queries
+- [ ] Route for handling like creation
+- [ ] ---> !!!!! Pickup HERE -- In the middle of adding a Like Route (routes/index.js)
+- [ ] Add fetch call to like creation
+- [ ] user sessions
+- [ ] loggin' in
+- [ ] Authenticate like routes
+- [ ] Add like button to album page
+- [ ] css for like button
+- [ ] check database to see if user_id is in table for specific album
+- [ ]
 
 
 
