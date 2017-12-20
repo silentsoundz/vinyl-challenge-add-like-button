@@ -3,3 +3,16 @@ html, body {
   padding: 0;
   width: 100vw;
 }
+
+body {
+  display: flex;
+  justify-content: space-around;
+}
+.center {
+  height: 200px;
+  margin-top: calc(50vh - 100px);
+}
+.error {
+  color:red;
+  weight: bold;
+}
