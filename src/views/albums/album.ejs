@@ -1,6 +1,11 @@
 <% include ../partials/header %>
 
+<i class="fa fa-sign-out sign-out" aria-hidden="true"></i>
 <h1><%= album.title %></h1>
 <em>by <%= album.artist %></em>
+<i class="fa fa-thumbs-up like-button" aria-hidden="true" data-albumId="<%= album.id %>" data-id="<%= user.id %>"><%= albumLiked %></i>
 
+<script>
+  let LIKETOTAL = <%= albumLiked %>
+</script>
 <% include ../partials/footer %>

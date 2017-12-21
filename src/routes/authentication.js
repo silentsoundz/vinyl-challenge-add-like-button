@@ -6,11 +6,14 @@ import {
   signUp,
 } from '../actions'
 
+import defaultResponseLocals from './defaultResponseLocals'
+
 const router = express.Router()
 
 router.get('/sign-up', (req, res) => {
   res.render('authentication/sign-up', {error:null})
 })
+
 router.post('/sign-up', (req, res) => {
   const {name, password} = req.body
   const email = req.body.email.toLowerCase()
@@ -23,7 +26,11 @@ router.post('/sign-up', (req, res) => {
           res.render('authentication/sign-up', {error: 'That email is in use.'})
         } else {
           signUp(name, email, password)
-            .then(() => res.redirect('/'))
+            .then((newUser) => {
+              req.session.user = newUser
+              console.log("user created: ",req.session.user)
+              return res.redirect('/')
+            })
         }
       })
   }
@@ -32,22 +39,26 @@ router.post('/sign-up', (req, res) => {
 router.get('/sign-in', (req, res) => {
   res.render('authentication/sign-in', {error: null})
 })
+
 router.post('/sign-in', (req, res) => {
   const {email, password} = req.body
-  signIn(email, password)
-    .then((valid) => {
-      if (valid) {
-        res.redirect('/')
-      } else {
-        res.render('authentication/sign-in', {error: 'Incorrect username or password'})
+  signIn(email)
+    .then((validUser) => {
+      if (!validUser) {
+        return res.render('authentication/sign-in', {error: 'Incorrect username or password'})
+      } else if (validUser.password !== password || validUser.email !== email) {
+        return res.render('authentication/sign-in', {error: 'Incorrect username or password'})
       }
+      req.session.user = validUser
+      console.log('user signed in: ', req.session.user)
+      return res.redirect('/')
     })
 })
 
-// router.get('/:albumID', (req, res, next) => {
-//   getAlbumById(req.params.albumID)
-//     .then(album => res.render('albums/album', {album}))
-//     .catch(next)
-// })
+router.delete('/logout', (req, res, next) => {
+  req.session.destroy()
+  defaultResponseLocals()
+  res.json()
+})
 
 export default router

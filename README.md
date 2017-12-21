@@ -73,6 +73,12 @@ Each requirement is assigned a point value. A fully complete requirement will ea
 
 **Actions I need to take to implement these specs:**
 
+### Authentication steps
+- [ ] implement session using connect pg simple and express sessions
+  - [ ] need to add session table to the schema and update schema
+  - [ ] add session script to the server.js file
+
+### Like functionality
 - [x] Schema representation of 'likes'
 - [ ] Database queries to interact with likes
   - [ ] query to see if liked
@@ -81,7 +87,6 @@ Each requirement is assigned a point value. A fully complete requirement will ea
 - [ ] Route for handling like creation
 - [ ] ---> !!!!! **Pickup HERE** -- In the middle of adding a Like Route (routes/index.js)
 - [ ] Add fetch call to like creation
-- [ ] user sessions
 - [ ] loggin' in
 - [ ] Authenticate like routes
 - [ ] Add like button to album page
