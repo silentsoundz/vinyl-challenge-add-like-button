@@ -37,10 +37,15 @@ router.post('/sign-up', (req, res) => {
 })
 
 router.get('/sign-in', (req, res) => {
-  res.render('authentication/sign-in', {error: null})
+  const {redirectUrl} = req.query
+  res.render('authentication/sign-in', {
+    error: null,
+    redirectUrl,
+  })
 })
 
 router.post('/sign-in', (req, res) => {
+  const {redirectUrl} = req.query
   const {email, password} = req.body
   signIn(email)
     .then((validUser) => {
@@ -51,7 +56,7 @@ router.post('/sign-in', (req, res) => {
       }
       req.session.user = validUser
       console.log('user signed in: ', req.session.user)
-      return res.redirect('/')
+      return res.redirect(`${redirectUrl}`)
     })
 })
 
