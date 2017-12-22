@@ -6,8 +6,6 @@ const logOutButton = document.querySelector('.sign-out')
 const likeAlbum = () => {
   const userId = Number(likeButton.getAttribute('data-id'))
   const albumId = Number(likeButton.getAttribute('data-albumId'))
-  console.log('userId:', userId)
-  console.log('albumId:', albumId)
   const options = {
     method: 'POST',
     headers: new Headers({
@@ -20,10 +18,9 @@ const likeAlbum = () => {
   return fetch(url, options)
     .then(response => response.json())
     .then((response) => {
-      if (response.canLikeFlag === false) {
+      if (!response.canLikeFlag) {
         likeButton.classList.add('turnRed')
       } else {
-        console.log('response', response.canLikeFlag)
         likeButton.innerHTML = response.displayLikes
       }
     })
@@ -39,9 +36,7 @@ const logOut = () => {
     credentials: 'include',
   }
   return fetch(url, options)
-    .then(response => response.json())
     .then((response) => {
-      console.log('response:', response)
       window.location.pathname = '/sign-in'
       return null
     })

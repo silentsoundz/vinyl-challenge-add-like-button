@@ -9,7 +9,6 @@ import {
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-  console.log( "======>res locals ", res.locals )
   if (!res.locals.isLoggedIn) {
     res.redirect('/sign-in')
   } else {
